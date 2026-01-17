@@ -11,7 +11,7 @@
 /// <version>1.0.0</version>
 ///
 /// <copyright>
-/// Copyright Â© 2025 Olaf Monien
+/// Copyright © 2026 Olaf Monien
 /// Licensed under MIT
 /// </copyright>
 ///
