@@ -1,4 +1,4 @@
-/// <summary>
+﻿/// <summary>
 /// DX.HttpDiag.Console
 /// Console output utilities with color support
 /// </summary>
@@ -11,7 +11,7 @@
 /// <version>1.0.0</version>
 ///
 /// <copyright>
-/// Copyright © 2025 Olaf Monien
+/// Copyright Â© 2025 Olaf Monien
 /// Licensed under MIT
 /// </copyright>
 ///

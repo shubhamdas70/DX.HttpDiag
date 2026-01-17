@@ -1,4 +1,4 @@
-/// <summary>
+﻿/// <summary>
 /// DX.HttpDiag.Core
 /// Main diagnostic orchestration
 /// </summary>
@@ -11,7 +11,7 @@
 /// <version>1.0.0</version>
 ///
 /// <copyright>
-/// Copyright © 2025 Olaf Monien
+/// Copyright Â© 2025 Olaf Monien
 /// Licensed under MIT
 /// </copyright>
 ///

@@ -1,4 +1,4 @@
-/// <summary>
+﻿/// <summary>
 /// DX.HttpDiag.Config
 /// Configuration and command-line argument parsing
 /// </summary>
@@ -11,7 +11,7 @@
 /// <version>1.0.0</version>
 ///
 /// <copyright>
-/// Copyright © 2025 Olaf Monien
+/// Copyright Â© 2025 Olaf Monien
 /// Licensed under MIT
 /// </copyright>
 ///
@@ -63,13 +63,15 @@ implementation
 
 class procedure TConfigParser.ShowUsage;
 begin
-  WriteLn('DX.HttpDiag - HTTPS URL Diagnostic Tool');
+  WriteLn('DX.HttpDiag - HTTPS URL Diagnostic Tool v1.0.0');
   WriteLn;
   WriteLn('Usage: DX.HttpDiag.exe <URL> [options]');
   WriteLn;
   WriteLn('Options:');
   WriteLn('  --timeout=<ms>    Request timeout in milliseconds (default: 30000)');
   WriteLn('  --insecure        Accept invalid certificates (for diagnostics only!)');
+  WriteLn('  --help, -h, -?    Show this help message');
+  WriteLn('  --version         Show version information');
   WriteLn;
   WriteLn('Examples:');
   WriteLn('  DX.HttpDiag.exe https://www.example.com');
@@ -102,6 +104,13 @@ begin
     if SameText(LParam, '--help') or SameText(LParam, '-h') or SameText(LParam, '-?') then
     begin
       ShowUsage;
+      Exit;
+    end
+    else if SameText(LParam, '--version') then
+    begin
+      WriteLn('DX.HttpDiag v1.0.0');
+      WriteLn('Copyright (c) 2026 Olaf Monien');
+      WriteLn('Licensed under MIT');
       Exit;
     end
     else if LParam.StartsWith('--timeout=', True) then
